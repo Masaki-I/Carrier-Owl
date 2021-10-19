@@ -63,7 +63,7 @@ def search_keyword(
     return results
 
 
-def send2app(text: str, slack_id: str, line_token: str) -> None:
+def send2app(text: str, teams_id: str, slack_id: str, line_token: str) -> None:
     # teams
     if teams_id is not None:
         myTeamsMessage = pymsteams.connectorcard(teams_id)
@@ -83,7 +83,7 @@ def send2app(text: str, slack_id: str, line_token: str) -> None:
         requests.post(line_notify_api, headers=headers, data=data)
 
 
-def notify(results: list, slack_id: str, line_token: str) -> None:
+def notify(results: list, teams_id: str, slack_id: str, line_token: str) -> None:
     # 通知
     star = '*'*80
     today = datetime.date.today()
@@ -106,7 +106,7 @@ def notify(results: list, slack_id: str, line_token: str) -> None:
                f'\n \t {abstract}'\
                f'\n {star}'
 
-        send2app(text, slack_id, line_token)
+        send2app(text, teams_id, slack_id, line_token)
 
 
 def get_translated_text(from_lang: str, to_lang: str, from_text: str) -> str:
@@ -190,7 +190,7 @@ def main():
     teams_id = os.getenv("TEAMS_ID") or args.teams_id    
     slack_id = os.getenv("SLACK_ID") or args.slack_id
     line_token = os.getenv("LINE_TOKEN") or args.line_token
-    notify(results, slack_id, line_token)
+    notify(results, teams_id, slack_id, line_token)
 
 
 if __name__ == "__main__":
