@@ -187,6 +187,7 @@ def main():
                            iterative=False)
     results = search_keyword(articles, keywords, score_threshold)
 
+    teams_id = os.getenv("TEAMS_ID") or args.teams_id    
     slack_id = os.getenv("SLACK_ID") or args.slack_id
     line_token = os.getenv("LINE_TOKEN") or args.line_token
     notify(results, slack_id, line_token)
