@@ -326,6 +326,9 @@ sgmllib3k = [
 slackweb = [
     {file = "slackweb-1.0.5.tar.gz", hash = "sha256:bb64f1f8fea99fc04ce8fb300a09aab8fe51d86e25cedafb1eaca07f7b828c36"},
 ]
+pymsteams = [
+    {file = "pymsteams-0.1.14.tar.gz", hash = "sha256:43b4cfb8512f270ccf8001cb9f992ea5a6288de29b18edbcea05f132a94774d2"},
+]
 soupsieve = [
     {file = "soupsieve-2.2-py3-none-any.whl", hash = "sha256:d3a5ea5b350423f47d07639f74475afedad48cf41c0ad7a82ca13a3928af34f6"},
     {file = "soupsieve-2.2.tar.gz", hash = "sha256:407fa1e8eb3458d1b5614df51d9651a1180ea5fedf07feb46e45d7e25e6d6cdd"},
